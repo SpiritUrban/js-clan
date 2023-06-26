@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
   {
-    path: '/',
+    path: '/js-clan',
     component: () => import('@/layouts/default/Default.vue'),
     children: [
       {
