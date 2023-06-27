@@ -6,10 +6,26 @@
     <tbody>
       <tr v-for="(item, index)  of members" :key="`${index}-member`">
         <td>
+          <img class="avatar" :src="item.img" alt="avatar">
+        </td>
+        <td>
           <div class="major-2">{{ item.name }}</div>
         </td>
         <td :style="item.status ? '' : 'padding:0'">
           {{ item.status }}
+        </td>
+        <td>
+          <v-btn v-if="item.github" icon :href="item.github" target="_blank" size="x-small" variant="tonal">
+            <v-icon icon="mdi-github"></v-icon>
+          </v-btn>
+          &nbsp;
+          <v-btn v-if="item.linkedin" icon :href="item.linkedin" target="_blank" size="x-small" variant="tonal">
+            <v-icon icon="mdi-linkedin"></v-icon>
+          </v-btn>
+          &nbsp;
+          <v-btn v-if="item.instagram" icon :href="item.instagram" target="_blank" size="x-small" variant="tonal">
+            <v-icon icon="mdi-instagram"></v-icon>
+          </v-btn>
         </td>
       </tr>
     </tbody>
@@ -29,6 +45,17 @@ const members = [
     github: 'https://github.com/SpiritUrban',
     linkedin: 'https://www.linkedin.com/in/vitaly-dyachuk-8ba18a54/',
     instagram: 'https://www.instagram.com/shadespiritenator/'
+  },
+  {
+    id: 11,
+    name: 'Diana',
+    img: 'https://avatars.githubusercontent.com/u/113860914?v=4',
+    status: 'student',
+    carma: 100,
+    level: 0,
+    github: 'https://github.com/NedVlor',
+    linkedin: '',
+    instagram: ''
   },
   {
     id: 2,
@@ -122,7 +149,7 @@ const members = [
   {
     id: 10,
     name: 'Dima Martinovich',
-    img: 'assets/img/base/icons/avatars/batman.svg',
+    img: 'https://avatars.githubusercontent.com/u/47226234?v=4',
     status: 'student',
     carma: 100,
     level: 0,
@@ -132,3 +159,10 @@ const members = [
   }
 ]
 </script>
+
+<style>
+.avatar {
+  width: 2rem;
+  border-radius: 2rem;
+}
+</style>
